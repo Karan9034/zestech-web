@@ -1,0 +1,55 @@
+header{
+	text-align: center;
+}
+header .upperHeader{
+	padding-top: 10px;
+	background-color: #161616;
+	color: #fff;
+}
+header .lowerHeader{
+	background-color: #0A4F3A;
+	color: #fff;
+}
+
+.intro{
+	background-image: url('../assets/img4.jpg');
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+.intro h1{
+	margin: 8vw 17vw 0;
+	font-size: 55px;
+	font-weight: bold;
+	text-align: center;
+}
+.intro p{
+	margin: 0 15vw;
+	font-size: 18px;
+	text-align: center;
+}
+.intro button{
+	position: relative;
+	left: 44%;
+	background-color: #0A4F3A;
+	border: 0;
+	font-size: 15px;
+	margin-top: 2vw;
+	padding: 7px 25px;
+	border-radius: 15px;
+	margin-bottom: 3vw;
+}
+
+.detail .text{
+	padding-left: 12vw;
+	padding-right: 13vw;
+	padding-top: 5vw;
+}
+.detail h3{
+	font-size: 28px;
+	margin: 2vw 0;
+}
+.detail p, .detail li{
+	font-size: 15px;
+}
