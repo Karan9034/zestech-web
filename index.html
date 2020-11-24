@@ -9,6 +9,7 @@
   	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  	<link rel="icon" href="assets/logo.png">
   	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -59,10 +60,67 @@
 		</div>
 	</div>
 
-	<div class="project">
+	<div class="container project">
 		<h2>Live Projects</h2>
 		<hr>
-
+		<div id="projectCarousel" class="carousel slide gallery" data-ride="carousel">
+		  	<ol class="carousel-indicators">
+		    	<li data-target="#projectCarousel" data-slide-to="0" class="active"></li>
+		    	<li data-target="#projectCrousel" data-slide-to="1"></li>
+		    	<li data-target="#projectCarousel" data-slide-to="2"></li>
+		  	</ol>
+		  	<div class="carousel-inner">
+			    <div class="item active">
+			      	<img src="assets/img1.jpg" alt="" class="img-responsive">
+			    </div>
+			    <div class="item">
+			      	<img src="assets/img2.jpg" alt="" class="img-responsive">
+			    </div>
+			    <div class="item">
+			      	<img src="assets/img3.jpg" alt="" class="img-responsive">
+			    </div>
+			</div>
+		  	<a class="left carousel-control" href="#projectCarousel" data-slide="prev">
+		    	<span class="glyphicon glyphicon-chevron-left"></span>
+		    	<span class="sr-only">Previous</span>
+		 	</a>
+		  	<a class="right carousel-control" href="#projectCarousel" data-slide="next">
+		    	<span class="glyphicon glyphicon-chevron-right"></span>
+		    	<span class="sr-only">Next</span>
+		  	</a>
+		</div>
 	</div>
+	<div class="container contact">
+		<h2>Contact Us</h2>
+		<hr>
+		<div class="row">
+			<div class="col-sm-6 col-md-6 col-lg-6">
+				<h3>Get an Estimate</h3>
+				<form class="form-group" method='post' action='' enctype='multipart/form-data'>
+					<input type="email" name="email" placeholder="Email*">
+					<input type="number" name="phone" placeholder="Phone*">
+					<input type="text" name="address" placeholder="Address(Street, City, Zip Code)*">
+					<input type="number" name="bill" placeholder="Average Monthly Bill*">
+					<textarea placeholder="Message"></textarea>
+					<p>Attachments (0)</p>
+					<input id="upload" type="file[]" name="attachments" multiple />
+					<a href="" id="upload_link">Upload your photo</a>
+				</form>
+			</div>
+			<div class="col-sm-6 col-md-6 col-lg-6">
+				
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		$(function(){
+	    	$("#upload_link").on('click', function(e){
+	        	e.preventDefault();
+	        	$("#upload:hidden").trigger('click');
+	    	});
+		});
+	</script>
 </body>
 </html>

@@ -53,3 +53,23 @@ header .lowerHeader{
 .detail p, .detail li{
 	font-size: 15px;
 }
+
+.gallery{
+	margin: 1vw 12vw;
+}
+
+
+input{
+	display: block;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+#upload{
+    display:none;
+}
