@@ -11,25 +11,25 @@ header .lowerHeader{
 	color: #fff;
 }
 
-.intro{
+#intro{
 	background-image: url('../assets/img4.jpg');
 	background-position: center bottom;
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: #fff;
 }
-.intro h1{
+#intro h1{
 	margin: 8vw 17vw 0;
 	font-size: 55px;
 	font-weight: bold;
 	text-align: center;
 }
-.intro p{
+#intro p{
 	margin: 0 15vw;
 	font-size: 18px;
 	text-align: center;
 }
-.intro button{
+#intro button{
 	position: relative;
 	left: 44%;
 	background-color: #0A4F3A;
@@ -39,18 +39,19 @@ header .lowerHeader{
 	padding: 7px 25px;
 	border-radius: 15px;
 	margin-bottom: 3vw;
+	color: #fff;
 }
 
-.detail .text{
+#detail .text{
 	padding-left: 12vw;
 	padding-right: 13vw;
 	padding-top: 5vw;
 }
-.detail h3{
+#detail h3{
 	font-size: 28px;
 	margin: 2vw 0;
 }
-.detail p, .detail li{
+#detail p, #detail li{
 	font-size: 15px;
 }
 
@@ -66,7 +67,30 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
+input, textarea{
+	display: block;
+	margin-top: 1.75vw;
+	width: 100%;
+	padding: 8px;
+}
+input.btn-sub{
+	position: relative;
+	background-color: #0A4F3A;
+	border: 0;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 3vw;
+	padding: 10px 25px;
+	border-radius: 15px;
+	margin-bottom: 3vw;
+	color: #fff;
+}
+textarea{
+	height: 100px;
+}
+#upload_link{
+	float: right;
+}
 #upload{
     display:none;
 }

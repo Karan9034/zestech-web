@@ -23,17 +23,17 @@
 			</div>
 		</div>
 	</header>
-	<div class="intro">
+	<div id="intro">
 		<div class="container">
 			<h1>Sustainable and Reliable Energy for Residential and Commercial sites</h1>	
 			<hr width="70%">
 			<p>Let <strong>Zestech</strong> deliver you premium quality renewable energy solutions to make your home and office sustainable.</p>
 			<br>
-			<button>Get Quote</button>
+			<a href="#contact"><button>Get Quote</button></a>
 		</div>
 	</div>
 
-	<div class="detail">
+	<div id="detail">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-6 col-md-6 col-lg-6 text">
@@ -60,7 +60,7 @@
 		</div>
 	</div>
 
-	<div class="container project">
+	<div class="container" id="project">
 		<h2>Live Projects</h2>
 		<hr>
 		<div id="projectCarousel" class="carousel slide gallery" data-ride="carousel">
@@ -90,7 +90,7 @@
 		  	</a>
 		</div>
 	</div>
-	<div class="container contact">
+	<div class="container" id="contact">
 		<h2>Contact Us</h2>
 		<hr>
 		<div class="row">
@@ -101,10 +101,12 @@
 					<input type="number" name="phone" placeholder="Phone*">
 					<input type="text" name="address" placeholder="Address(Street, City, Zip Code)*">
 					<input type="number" name="bill" placeholder="Average Monthly Bill*">
-					<textarea placeholder="Message"></textarea>
-					<p>Attachments (<span id="fileCount">0</span>)</p>
-					<input id="upload" type="file" name="attachments[]" multiple />
-					<a href="" id="upload_link">Upload your photo</a>
+					<textarea placeholder="Message"></textarea><br>
+					<label for="attachments[]">Attachments (<span id="fileCount">0</span>)</label>
+					<input id="upload" type="file" name="attachments[]" multiple>
+					<a href="" id="upload_link"><span class="glyphicon glyphicon-paperclip"></span>Kindly attach your latest bill</a><br>
+					<input type="checkbox" name="promotions">
+					<input class="btn btn-lg btn-success btn-sub" type="submit" name="submit" value="Get Quote">
 				</form>
 			</div>
 			<div class="col-sm-6 col-md-6 col-lg-6">
