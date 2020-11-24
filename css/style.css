@@ -58,10 +58,6 @@ header .lowerHeader{
 	margin: 1vw 12vw;
 }
 
-
-input{
-	display: block;
-}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -70,6 +66,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
 #upload{
     display:none;
 }

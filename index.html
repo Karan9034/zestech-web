@@ -102,8 +102,8 @@
 					<input type="text" name="address" placeholder="Address(Street, City, Zip Code)*">
 					<input type="number" name="bill" placeholder="Average Monthly Bill*">
 					<textarea placeholder="Message"></textarea>
-					<p>Attachments (0)</p>
-					<input id="upload" type="file[]" name="attachments" multiple />
+					<p>Attachments (<span id="fileCount">0</span>)</p>
+					<input id="upload" type="file" name="attachments[]" multiple />
 					<a href="" id="upload_link">Upload your photo</a>
 				</form>
 			</div>
@@ -116,6 +116,12 @@
 
 	<script type="text/javascript">
 		$(function(){
+	    	$('input#upload').change(function(){
+		    var files = $(this)[0].files;
+		    if(files.length != 0 ){
+		    	document.getElementById("fileCount").innerHTML = files.length;
+		    }
+		});
 	    	$("#upload_link").on('click', function(e){
 	        	e.preventDefault();
 	        	$("#upload:hidden").trigger('click');
