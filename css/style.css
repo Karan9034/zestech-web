@@ -107,3 +107,32 @@ input:checked{
 	text-align: center;
 	margin-bottom: 3vw;
 }
+p.help{
+	margin-top: 2vw;
+	color: #888;
+	font-size: 16px;
+}
+button.help{
+	background-color: #0A4F3A;
+	border: 0;
+	font-size: 18px;
+	margin-top: 3vw;
+	padding: 7px 25px;
+	border-radius: 15px;
+	margin-bottom: 5vw;
+	color: #fff;
+}
+h3.help{
+	margin: 4vw 0 3vw;
+}
+
+#social .i1{
+	position: relative;
+	left: 45%;
+	width: 55px;
+}
+#social .i2{
+	position: relative;
+	left: 45%;
+	width: 45px;
+}
