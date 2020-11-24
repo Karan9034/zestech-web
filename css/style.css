@@ -82,7 +82,7 @@ input.btn-sub{
 	margin-top: 3vw;
 	padding: 10px 25px;
 	border-radius: 15px;
-	margin-bottom: 3vw;
+	margin-bottom: 1vw;
 	color: #fff;
 }
 textarea{
@@ -93,4 +93,17 @@ textarea{
 }
 #upload{
     display:none;
+}
+input[type=checkbox]{
+	margin-top: 2vw;
+	width: 5%;
+	display: inline;
+}
+input:checked{
+	color: #0A4F3A;
+}
+.captcha{
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 3vw;
 }
