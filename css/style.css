@@ -90,6 +90,7 @@ textarea{
 }
 #upload_link{
 	float: right;
+	color: #0A4F3A;
 }
 #upload{
     display:none;
