@@ -193,7 +193,6 @@ h3.help{
 	#social h2{
 		font-size: 28px;
 	}
-
 }
 
 /*Large Mobile Screens*/
@@ -220,11 +219,22 @@ h3.help{
 	#detail p{
 		margin-bottom: 4vw;
 	}
-
+	#social .i1{
+		left: 28vw;
+		width: 55px;
+	}
+	#social .i2{
+		left: 28vw;
+		width: 45px;
+	}
+	#social .i3{
+		left: 28vw;
+		width: 60px;
+	}
 }
 
 /*Small Mobile Screens*/
-@media all and (max-width: 768px){
+@media all and (max-width: 600px){
 	header .upperHeader{
 		font-size: 14px;
 	}
@@ -232,9 +242,9 @@ h3.help{
 		font-size: 28px;
 	}
 	#intro h1{
-		font-size: 40px;
+		font-size: 26px;
 	}
 	#intro p{
-		font-size: 16px;
+		font-size: 14px;
 	}
 }
