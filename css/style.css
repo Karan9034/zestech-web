@@ -142,7 +142,7 @@ h3.help{
 	left: 35vw;
 	width: 60px;
 }
-.detail-bg img{
+#detail img{
 	width: 100%;
 }
 
@@ -252,8 +252,5 @@ h3.help{
 	}
 	#intro button{
 		left: 30vw;
-	}
-	.gallery{
-		margin: 1vw 8vw;
 	}
 }
