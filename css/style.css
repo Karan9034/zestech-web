@@ -31,7 +31,7 @@ header .lowerHeader{
 }
 #intro button{
 	position: relative;
-	left: 44%;
+	left: 38vw;
 	background-color: #0A4F3A;
 	border: 0;
 	font-size: 15px;
@@ -129,11 +129,112 @@ h3.help{
 
 #social .i1{
 	position: relative;
-	left: 45%;
+	left: 35vw;
 	width: 55px;
 }
 #social .i2{
 	position: relative;
-	left: 45%;
+	left: 35vw;
 	width: 45px;
+}
+#social .i3{
+	position: relative;
+	left: 35vw;
+	width: 60px;
+}
+.detail-bg img{
+	width: 100%;
+}
+
+
+/*Tablet Screens*/
+@media all and (max-width: 992px){
+	header .upperHeader{
+		font-size: 14px;
+	}
+	header .lowerHeader h2{
+		font-size: 28px;
+	}
+	#intro h1{
+		font-size: 40px;
+	}
+	#intro p{
+		font-size: 17px;
+	}
+
+	#detail .text{
+		padding-left: 6vw;
+		padding-right: 8vw;
+		padding-top: 2vw;
+	}
+	#detail h3{
+		font-size: 20px;
+		margin: 2vw 0;
+	}
+	#detail p, #detail li{
+		font-size: 12px;
+	}
+	#project h2{
+		font-size: 28px;
+	}
+	#contact h2{
+		font-size: 28px;
+	}
+	#contact h3{
+		font-size: 24px;
+	}
+	p.help{
+		font-size: 15px;
+		margin-bottom: 5vw;
+	}
+	h3.help{
+		font-size: 20px;
+	}
+	#social h2{
+		font-size: 28px;
+	}
+
+}
+
+/*Large Mobile Screens*/
+@media all and (max-width: 768px){
+	header .upperHeader{
+		font-size: 14px;
+	}
+	header .lowerHeader h2{
+		font-size: 28px;
+	}
+	#intro h1{
+		font-size: 40px;
+	}
+	#intro p{
+		font-size: 16px;
+	}
+	#detail h3{
+		font-size: 
+	}
+	#detail p, #detail li{
+		font-size: 14px;
+		margin: 0 15vw 0 2vw;
+	}
+	#detail p{
+		margin-bottom: 4vw;
+	}
+
+}
+
+/*Small Mobile Screens*/
+@media all and (max-width: 768px){
+	header .upperHeader{
+		font-size: 14px;
+	}
+	header .lowerHeader h2{
+		font-size: 28px;
+	}
+	#intro h1{
+		font-size: 40px;
+	}
+	#intro p{
+		font-size: 16px;
+	}
 }
