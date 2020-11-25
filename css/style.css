@@ -239,15 +239,18 @@ h3.help{
 		font-size: 14px;
 	}
 	header .lowerHeader h2{
-		font-size: 28px;
+		font-size: 26px;
 	}
 	#intro h1{
-		font-size: 26px;
+		font-size: 28px;
 	}
 	#intro p{
 		font-size: 14px;
 	}
 	p.help{
 		font-size: 14px;
+	}
+	#intro button{
+		left: 30vw;
 	}
 }
