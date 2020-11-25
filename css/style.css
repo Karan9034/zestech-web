@@ -253,4 +253,7 @@ h3.help{
 	#intro button{
 		left: 30vw;
 	}
+	.gallery{
+		margin: 1vw 8vw;
+	}
 }
