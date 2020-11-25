@@ -247,4 +247,7 @@ h3.help{
 	#intro p{
 		font-size: 14px;
 	}
+	p.help{
+		font-size: 14px;
+	}
 }
