@@ -9,8 +9,8 @@
   	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  	<link rel="icon" type="image/icon" href="assets/logo.png">
-  	<link rel="stylesheet" type="text/css" href="css/style.css">
+  	<link rel="icon" type="image/icon" href="{{ url_for('static', filename='assets/logo.png') }}">
+  	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 	<header>
@@ -56,7 +56,7 @@
 					<p>Our motive is to provide excellent and effortless service, we will ensure that you sit back and relax while we create value for you.</p>
 				</div>
 				<div class="col-sm-6 col-md-6 col-lg-6 detail-bg">
-					<img src="assets/img5.jpg" alt="">
+					<img src="{{ url_for('static', filename='assets/img5.jpg') }}" alt="">
 				</div>
 			</div>
 		</div>
@@ -73,13 +73,13 @@
 		  	</ol>
 		  	<div class="carousel-inner">
 			    <div class="item active">
-			      	<img src="assets/img1.jpg" alt="">
+			      	<img src="{{ url_for('static', filename='assets/img1.jpg') }}" alt="">
 			    </div>
 			    <div class="item">
-			      	<img src="assets/img2.jpg" alt="">
+			      	<img src="{{ url_for('static', filename='assets/img2.jpg') }}" alt="">
 			    </div>
 			    <div class="item">
-			      	<img src="assets/img3.jpg" alt="">
+			      	<img src="{{ url_for('static', filename='assets/img3.jpg') }}" alt="">
 			    </div>
 			</div>
 		  	<a class="left carousel-control" href="#projectCarousel" data-slide="prev">
@@ -98,24 +98,33 @@
 		<div class="row">
 			<div class="col-sm-6 col-md-6 col-lg-6">
 				<h3>Get an Estimate</h3>
-				<form class="form-group" method='post' action='' enctype='multipart/form-data'>
-					<input type="email" name="email" placeholder="Email*">
-					<input type="number" name="phone" placeholder="Phone*">
-					<input type="text" name="address" placeholder="Address(Street, City, Zip Code)*">
-					<input type="number" name="bill" placeholder="Average Monthly Bill*">
-					<textarea placeholder="Message"></textarea><br>
-					<label for="attachments[]">Attachments (<span id="fileCount">0</span>)</label>
-					<input id="upload" type="file" name="attachments[]" multiple>
+				<form class="form-group" method='POST' action="" enctype='multipart/form-data'>
+					{% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for type, message in messages %}
+                                <div class="alert alert-{{ type }}">
+                                {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+					{{ form.email(placeholder='Email*') }}
+					{{ form.phone(placeholder='Phone*')}}
+					{{ form.address(placeholder='Address(Street, City, Zip Code)*') }}
+					{{ form.bill(placeholder='Average Monthly Bill*') }}
+					{{ form.message(placeholder='Message') }}<br>
+					<label for="files">Attachments (<span id="fileCount">0</span>)</label>
+					{{ form.files() }}
 					<a href="" id="upload_link"><span class="glyphicon glyphicon-paperclip"></span> Kindly attach your latest bill</a><br>
-					<input type="checkbox" name="promotions"><span>Sign up for our email list for updates, promotions, and more.</span>
-					<input class="btn btn-lg btn-success btn-sub" type="submit" name="submit" value="Get Quote">
+					{{ form.promotion() }}<span>Sign up for our email list for updates, promotions, and more.</span>
+					{{ form.submit(class="btn btn-lg btn-success btn-sub") }}
 				</form>
 				<p class="captcha">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
 			</div>
 			<div class="col-sm-6 col-md-6 col-lg-6">
 				<h3>How can we help?</h3>
 				<p class="help">We strive to be in constant communication with our customers until the job is done. Please use the form for an estimate, or call us for any questions about converting your home or business to solar. We look forward to serving you!</p>
-				<a href="http://wa.me/917740084255" target="blank"><button class="help"><img src="assets/whatsapp.png" width="25px"> Message us on WhatsApp</button></a>
+				<a href="http://wa.me/917740084255" target="blank"><button class="help"><img src="{{ url_for('static', filename='assets/whatsapp.png') }}" width="25px"> Message us on WhatsApp</button></a>
 				<h3>Zestech Energies</h3>
 				<h3 class="help">Hours</h3>
 				<p>Monday - Sunday : 9am - 9pm</p>
@@ -126,9 +135,9 @@
 		<h2>Social</h2>
 		<hr>
 		<div>
-			<a href="https://www.facebook.com/zestech.enegies" target="blank"><img class="i1" src="assets/fb.png" alt=""></a>
-			<a href="https://www.instagram.com/zestech_energies/" target="blank"><img class="i2" src="assets/insta.png" alt=""></a>
-			<a href="https://www.linkedin.com/company/zestech-energies" target="blank"><img class="i3" src="assets/linkedin.png" alt=""></a>
+			<a href="https://www.facebook.com/zestech.enegies" target="blank"><img class="i1" src="{{ url_for('static', filename='assets/fb.png') }}" alt=""></a>
+			<a href="https://www.instagram.com/zestech_energies/" target="blank"><img class="i2" src="{{ url_for('static', filename='assets/insta.png') }}" alt=""></a>
+			<a href="https://www.linkedin.com/company/zestech-energies" target="blank"><img class="i3" src="{{ url_for('static', filename='assets/linkedin.png') }}" alt=""></a>
 		</div>
 	</div>
 
