@@ -4,8 +4,8 @@ from config import Config
 from flask_mail import Mail
 
 app = Flask(__name__)
-mail = Mail(app)
 app.config.from_object(Config)
+mail = Mail(app)
 from form import QueryForm, send_mail
 
 @app.route('/', methods=['GET','POST'])
