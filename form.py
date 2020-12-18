@@ -24,9 +24,9 @@ Address: {form.address.data}
 Average Monthly Bill: {form.bill.data}
 Message: {form.message.data}
 '''
-	# for file in os.listdir(os.path.join(os.getcwd(), 'files')):
-	# 	with app.open_resource(os.path.join(os.getcwd(), 'files', file)) as fp:
-	# 		mime = magic.Magic(mime=True)
-	# 		c_type = mime.from_file(os.path.join(os.getcwd(), 'files', file))
-	# 		msg.attach(file, c_type, fp.read())
+	for file in os.listdir(os.path.join(os.getcwd(), 'files')):
+		with app.open_resource(os.path.join(os.getcwd(), 'files', file)) as fp:
+			mime = magic.Magic(mime=True)
+			c_type = mime.from_file(os.path.join(os.getcwd(), 'files', file))
+			msg.attach(file, c_type, fp.read())
 	mail.send(msg)
