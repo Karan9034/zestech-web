@@ -13,14 +13,12 @@ mail = Mail(app)
 def home():
 	form = QueryForm()
 	if form.submit.data:
-		files = request.files.getlist("files")
-		print(file for file in files)
+		files = request.files['files']
 		os.system('mkdir ./files')
-		# if files:
-		# 	for file in files:
-		# 		file.save(os.path.join(os.getcwd(), 'files', file.filename))
-		# msg = send_mail(form)
-		# mail.send(msg)
+		for file in files:
+			file.save(os.path.join(os.getcwd(), 'files', secure_filename(file.filename)))
+		msg = send_mail(form)
+		mail.send(msg)
 		os.system('rm -r ./files/*')
 		flash('We will reach out to you in a few days', 'success')
 		return redirect(url_for('home'))
