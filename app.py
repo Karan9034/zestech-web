@@ -14,12 +14,11 @@ def home():
 	form = QueryForm()
 	if form.submit.data:
 		files = request.files.getlist("files")
-		os.system('mkdir uploads')
 		for file in files:
 			file.save(os.path.join(os.getcwd(), 'uploads', file.filename))
-		# msg = send_mail(form)
-		# mail.send(msg)
-		# os.system('rm -rf ./uploads')
+		msg = send_mail(form)
+		mail.send(msg)
+		os.system('rm -r ./uploads/*')
 		flash('We will reach out to you in a few days', 'success')
 		return redirect(url_for('home'))
 	return render_template('index.html', form=form)
