@@ -15,10 +15,10 @@ def home():
 	if form.submit.data:
 		files = request.files.getlist("files")
 		for file in files:
-			file.save(os.path.join(os.getcwd(), 'uploads', file.filename))
+			file.save(os.path.join(os.getcwd(), 'files', file.filename))
 		msg = send_mail(form)
 		mail.send(msg)
-		os.system('rm -r ./uploads/*')
+		os.system('rm -r ./files/*')
 		flash('We will reach out to you in a few days', 'success')
 		return redirect(url_for('home'))
 	return render_template('index.html', form=form)
