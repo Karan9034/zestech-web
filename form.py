@@ -14,7 +14,7 @@ class QueryForm(FlaskForm):
 	promotion = BooleanField('Promotional')
 	submit = SubmitField('Get Quote')
 
-from app import mail, app
+from run import mail, app
 
 def send_mail(form):
 	msg = Message("Quote Enquiry Mail", sender='inquiry.zestech@gmail.com', recipients=['karan.agr9034@gmail.com'])
