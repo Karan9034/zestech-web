@@ -7,4 +7,3 @@ class Config():
     MAIL_USE_TLS = True
     MAIL_USERNAME = 'inquiry.zestech@gmail.com'
     MAIL_PASSWORD = '1234Abcd9@'
-    UPLOAD_FOLDER = os.path.join(os.getcwd(), 'files')

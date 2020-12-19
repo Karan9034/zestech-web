@@ -1,16 +1,17 @@
 import os
-from app import app
-from flask import render_template, url_for, redirect, request, flash
+from flask import Blueprint, render_template, url_for, redirect, request, flash
 from form import QueryForm, send_mail
 
-@app.route('/', methods=['GET','POST'])
+routes = Blueprint('routes', __name__)
+
+@routes.route('/', methods=['GET','POST'])
 def home():
 	form = QueryForm()
 	if form.submit.data:
 		files = request.files.getlist("files")
 		os.system('mkdir files')
 		for file in files:
-			file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
+			file.save(os.path.join(os.getcwd(), 'files', file.filename))
 		send_mail(form)
 		os.system('rm -rf ./files')
 		flash('We will reach out to you in a few days', 'success')
