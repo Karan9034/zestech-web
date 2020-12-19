@@ -14,7 +14,7 @@ def home():
 	form = QueryForm()
 	if form.submit.data:
 		files = request.files.getlist("files")
-		print(files)
+		print(file for file in files)
 		# if files:
 		# 	for file in files:
 		# 		file.save(os.path.join(os.getcwd(), 'files', file.filename))
