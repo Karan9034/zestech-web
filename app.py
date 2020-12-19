@@ -3,6 +3,7 @@ from flask import Flask, render_template, url_for, redirect, request, flash
 from form import QueryForm
 from mail import send_mail
 from flask_mail import Mail
+from werkzeug.utils import secure_filename
 from config import Config
 
 app = Flask(__name__)
