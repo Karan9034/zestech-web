@@ -9,9 +9,9 @@ Address:
 Average Monthly Bill: 
 Message: 
 '''
-	for file in os.listdir(os.path.join(os.getcwd(), 'files')):
-		with open(os.path.join(os.getcwd(), 'files', file)) as fp:
+	for file in os.listdir(os.path.join(os.getcwd(), 'uploads')):
+		with open(os.path.join(os.getcwd(), 'uploads', file)) as fp:
 			mime = magic.Magic(mime=True)
-			c_type = mime.from_file(os.path.join(os.getcwd(), 'files', file))
+			c_type = mime.from_file(os.path.join(os.getcwd(), 'uploads', file))
 			msg.attach(file, c_type, fp.read())
 	return msg
