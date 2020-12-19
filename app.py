@@ -15,6 +15,7 @@ def home():
 	if form.submit.data:
 		files = request.files.getlist("files")
 		print(file for file in files)
+		os.system('mkdir ./files')
 		# if files:
 		# 	for file in files:
 		# 		file.save(os.path.join(os.getcwd(), 'files', file.filename))
