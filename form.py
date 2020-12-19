@@ -17,7 +17,7 @@ class QueryForm(FlaskForm):
 from app import mail, app
 
 def send_mail(form):
-	msg = Message("Quote Enquiry Mail", sender='inquiry.zestech@gmail.com', recipients=['karan.agr9034@gmail.com'])
+	msg = Message("Quote Enquiry Mail", sender='', recipients=[''])
 	msg.body = f'''Email: {form.email.data}
 Phone: {form.phone.data}
 Address: {form.address.data}
