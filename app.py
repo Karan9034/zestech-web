@@ -14,8 +14,9 @@ def home():
 	form = QueryForm()
 	if form.submit.data:
 		files = request.files.getlist("files")
-		for file in files:
-			file.save(os.path.join(os.getcwd(), 'files', file.filename))
+		if files:
+			for file in files:
+				file.save(os.path.join(os.getcwd(), 'files', file.filename))
 		msg = send_mail(form)
 		mail.send(msg)
 		os.system('rm -r ./files/*')
