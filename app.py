@@ -17,8 +17,8 @@ def home():
 		os.system('mkdir uploads')
 		for file in files:
 			file.save(os.path.join(os.getcwd(), 'uploads', file.filename))
-		msg = send_mail(form)
-		mail.send(msg)
+		# msg = send_mail(form)
+		# mail.send(msg)
 		os.system('rm -rf ./uploads')
 		flash('We will reach out to you in a few days', 'success')
 		return redirect(url_for('home'))
