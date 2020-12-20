@@ -13,7 +13,7 @@ encoding_guess_list=['utf8', "cp1252" ,'latin1']
 
 
 def send_mail(form):
-	msg = Message("Quote Enquiry Mail", sender='mindblogger@hotmail.com', recipients=['karan.agr9034@gmail.com'])
+	msg = Message("Quote Enquiry Mail", sender='zestech.inquiry@outlook.com', recipients=['zestech.inquiry@gmail.com'])
 	msg.body = f'''Email: {form.email.data}
 Phone: {form.phone.data}
 Address: {form.address.data}
@@ -28,6 +28,7 @@ Message: {form.message.data}
 				c_type = mime.from_file(os.path.join(os.getcwd(), 'files', file))
 				msg.attach(file, c_type, fp.read())
 				fp.close()
+				break
 			except:
 				continue
 	mail.send(msg)
