@@ -9,6 +9,9 @@ app = Flask(__name__)
 app.config.from_object(Config)
 mail = Mail(app)
 
+encoding_guess_list=['utf8', "cp1252" ,'latin1']
+
+
 def send_mail(form):
 	msg = Message("Quote Enquiry Mail", sender='mindblogger@hotmail.com', recipients=['karan.agr9034@gmail.com'])
 	msg.body = f'''Email: {form.email.data}
@@ -18,10 +21,15 @@ Average Monthly Bill: {form.bill.data}
 Message: {form.message.data}
 '''
 	for file in os.listdir(os.path.join(os.getcwd(), 'files')):
-		with open(os.path.join(os.getcwd(), 'files', file)) as fp:
-			mime = magic.Magic(mime=True)
-			c_type = mime.from_file(os.path.join(os.getcwd(), 'files', file))
-			msg.attach(file, c_type, fp.read())
+		for encoding in encoding_guess_list:
+			try:
+				fp = open(os.path.join(os.getcwd(), 'files', file), 'rt', encoding=encoding)
+				mime = magic.Magic(mime=True)
+				c_type = mime.from_file(os.path.join(os.getcwd(), 'files', file))
+				msg.attach(file, c_type, fp.read())
+				fp.close()
+			except:
+				continue
 	mail.send(msg)
 
 @app.route('/', methods=['GET','POST'])
