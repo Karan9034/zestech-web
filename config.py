@@ -5,5 +5,5 @@ class Config():
     MAIL_SERVER = 'smtp.office365.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = 'zestech.inquiry@outlook.com'
+    MAIL_USERNAME = 'zestech.inquiry@hotmail.com'
     MAIL_PASSWORD = '1234Abcd9@'

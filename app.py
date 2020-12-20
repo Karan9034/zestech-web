@@ -13,7 +13,7 @@ encoding_guess_list=['utf8', "cp1252" ,'latin1']
 
 
 def send_mail(form):
-	msg = Message("Quote Enquiry Mail", sender='zestech.inquiry@outlook.com', recipients=['zestech.inquiry@gmail.com'])
+	msg = Message("Quote Enquiry Mail", sender='zestech.inquiry@hotmail.com', recipients=['zestech.inquiry@gmail.com'])
 	msg.body = f'''Email: {form.email.data}
 Phone: {form.phone.data}
 Address: {form.address.data}
