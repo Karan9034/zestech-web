@@ -37,9 +37,10 @@ Message: {form.message.data}
 def home():
 	form = QueryForm()
 	if form.submit.data:
-		upfile = request.files['files']
+		upfiles = request.files.getlist('files')
 		os.system('mkdir ./files')
-		upfile.save(os.path.join(os.getcwd(), 'files', secure_filename(upfile.filename)))
+		for upfile in upfiles:
+			upfile.save(os.path.join(os.getcwd(), 'files', secure_filename(upfile.filename)))
 		send_mail(form)
 		os.system('rm -r ./files/*')
 		flash('We will reach out to you in a few days', 'success')

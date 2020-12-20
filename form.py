@@ -8,6 +8,6 @@ class QueryForm(FlaskForm):
 	address = StringField('Address*', validators=[DataRequired(), Length(min=10, max=1000)])
 	bill = IntegerField('Average Monthly Bill*', validators=[DataRequired()])
 	message = TextAreaField('Message')
-	files = FileField('Attachments', render_kw={"id":"upload"})
+	files = FileField('Attachments', render_kw={"id":"upload", "multiple":"True"})
 	promotion = BooleanField('Promotional')
 	submit = SubmitField('Get Quote')
