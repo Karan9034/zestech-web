@@ -10,7 +10,7 @@ app.config.from_object(Config)
 mail = Mail(app)
 
 def send_mail(form):
-	msg = Message("Quote Enquiry Mail", sender='mindblogger@hotmail.com', recipients=['zestech.inquiry@gmail.com'])
+	msg = Message("Quote Enquiry Mail", sender='mindblogger@hotmail.com', recipients=['karan.agr9034@gmail.com'])
 	msg.body = f'''Email: {form.email.data}
 Phone: {form.phone.data}
 Address: {form.address.data}
@@ -28,10 +28,9 @@ Message: {form.message.data}
 def home():
 	form = QueryForm()
 	if form.submit.data:
-		upfiles = request.files['files']
+		upfile = request.files['files']
 		os.system('mkdir ./files')
-		for upfile in upfiles:
-			upfile.save(os.path.join(os.getcwd(), 'files', secure_filename(upfile.filename)))
+		upfile.save(os.path.join(os.getcwd(), 'files', secure_filename(upfile.filename)))
 		send_mail(form)
 		os.system('rm -r ./files/*')
 		flash('We will reach out to you in a few days', 'success')
