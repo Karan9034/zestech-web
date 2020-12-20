@@ -10,7 +10,7 @@ app.config.from_object(Config)
 mail = Mail(app)
 
 def send_mail(form):
-	msg = Message("Quote Enquiry Mail", sender='inquiry.zestech@gmail.com', recipients=['karan.agr9034@gmail.com'])
+	msg = Message("Quote Enquiry Mail", sender='mindblogger@hotmail.com', recipients=['zestech.inquiry@gmail.com'])
 	msg.body = f'''Email: {form.email.data}
 Phone: {form.phone.data}
 Address: {form.address.data}
