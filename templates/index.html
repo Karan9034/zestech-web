@@ -113,7 +113,7 @@
 					{{ form.address(placeholder='Address(Street, City, Zip Code)*') }}
 					{{ form.bill(placeholder='Average Monthly Bill*') }}
 					{{ form.message(placeholder='Message') }}<br>
-					<label for="files">Attachments</label>
+					<label for="files">Attachments (<span id="fileCount">0</span>)</label>
 					{{ form.files() }}
 					<a href="" id="upload_link"><span class="glyphicon glyphicon-paperclip"></span> Kindly attach your latest bill</a><br>
 					{{ form.promotion() }}<span>Sign up for our email list for updates, promotions, and more.</span>
@@ -144,6 +144,12 @@
 
 	<script type="text/javascript">
 		$(function(){
+			$('input#upload').change(function(){
+				var files = $(this)[0].files;
+				if(files.length != 0 ){
+					document.getElementById("fileCount").innerHTML = files.length;
+				}
+			});
 	    	$("#upload_link").on('click', function(e){
 	        	e.preventDefault();
 	        	$("#upload:hidden").trigger('click');
